@@ -24,4 +24,4 @@ Diagnosed and corrected real faults during the build:
 Cisco Packet Tracer
 
 ## Files
-The Packet Tracer project file (.pkt) and topology image will be added here.
+Not yet uploaded: the Packet Tracer project file (.pkt) and a topology image still need to be added to this folder.
