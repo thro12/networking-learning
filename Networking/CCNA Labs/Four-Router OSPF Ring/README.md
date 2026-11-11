@@ -1,6 +1,7 @@
 # Four-Router OSPF Ring
 
 **Status:** Practice lab (October 2026)
+
 **Built with:** Cisco Packet Tracer
 
 Four routers connected in a ring, all running OSPF in a single area (area 0), so the routers share their networks automatically and always have two possible paths around the ring.
