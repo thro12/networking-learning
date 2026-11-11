@@ -1,6 +1,7 @@
 # EIGRP Four-Router Ring
 
 **Status:** Practice lab (October 2026)
+
 **Built with:** Cisco Packet Tracer
 
 Four routers in a ring with two end LANs, running EIGRP in autonomous system 100 so routes are shared dynamically between all routers.
