@@ -1,6 +1,7 @@
 # Three-Router RIP Network
 
 **Status:** Practice lab (October 2026)
+
 **Built with:** Cisco Packet Tracer
 
 A three-router network running the RIP dynamic routing protocol: instead of typing routes by hand, each router advertises its connected networks and learns the rest from its neighbours.
