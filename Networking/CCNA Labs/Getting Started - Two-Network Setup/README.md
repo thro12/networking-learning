@@ -1,6 +1,7 @@
 # Getting Started with Cisco Packet Tracer: Two-Network Setup
 
 **Status:** Practice lab (October 2026)
+
 **Built with:** Cisco Packet Tracer
 
 My first hands-on Packet Tracer lab: two separate IP networks built from scratch, with a router connecting them so devices on one network can reach devices on the other.
