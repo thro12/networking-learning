@@ -1,6 +1,7 @@
 # Four-Router Static Routing Network
 
 **Status:** Practice lab (October 2026)
+
 **Built with:** Cisco Packet Tracer
 
 A four-router network with eight PCs where every route is typed by hand: static routes tell each router how to reach the networks it is not directly connected to.
