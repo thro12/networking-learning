@@ -8,6 +8,7 @@ Hands-on networking labs in Cisco Packet Tracer and GNS3. Each project folder ha
 | --- | --- | --- |
 | [Hotel Network Design and Troubleshooting](./Hotel%20Network%20Design%20and%20Troubleshooting) | Cisco Packet Tracer | Completed (Nov 2026) |
 | [Bank Network Architecture - In Progress](./Bank%20Network%20Architecture%20-%20In%20Progress) | Cisco Packet Tracer + PTBuilder (JavaScript) | In progress |
+| [Company Network Design - In Progress](./Company%20Network%20Design%20-%20In%20Progress) | Cisco Packet Tracer + PTBuilder (JavaScript) | In progress |
 | [Campus Network Design](./Campus%20Network%20Design) | Cisco Packet Tracer | Topology and .pkt uploaded; detailed write-up pending |
 | [Lab 1 - Routing Between Two LANs in GNS3](./Lab%201%20-%20Routing%20Between%20Two%20LANs%20in%20GNS3) | GNS3 + VPCS | Completed (Nov 2026) |
 | [SSH Configuration in GNS3 - In Progress](./SSH%20Configuration%20in%20GNS3%20-%20In%20Progress) | GNS3 + Cisco IOS | In progress (Nov 2026): router SSH setup being applied, host connectivity test pending |
