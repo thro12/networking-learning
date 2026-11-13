@@ -4,12 +4,12 @@
 
 ## Actual lab topology (13 Nov 2026)
 
-Three emulated Cisco 7206VXR routers (GNS3 + dynamips), one management network, and three small LANs:
+Three emulated Cisco IOS routers (GNS3 + dynamips), one management network, and three small LANs. The router model is proven by `show inventory` on R2 (BLR) only:
 
 - **Management:** Cloud1 (`feth1`, the Mac host side) - Switch4 - all three routers
-- **R1 - HYD** (Cisco 7206VXR, NPE-400)
+- **R1 - HYD** (Cisco IOS router - model not captured yet)
   - Gi2/0: `172.16.100.11` up/up (management) - SSH target
-  - Gi1/0: `10.20.12.1` up/up (transit toward R2, 10.20.12.0/24)
+  - Gi1/0: `10.20.12.1` up/up (transit toward R2; subnet mask not captured)
   - Fa0/0: `10.20.1.1` up/up (LAN via Switch1 - PC1, PC2 on VPCS)
   - All addresses show Method = NVRAM (loaded from startup-config at boot)
 - **R2 - BLR** (Cisco 7206VXR, NPE-400)
@@ -36,7 +36,7 @@ Why each option is needed - the old IOS image only offers legacy algorithms, and
 
 Verified: password prompt, successful login, `HYD#` prompt, `show ip interface brief` output over the session.
 
-**Lab-only warning:** these are legacy, weak algorithms. Acceptable inside isolated GNS3 emulation; do not enable them for real devices - upgrade the device SSH stack instead.
+**Lab-only warning:** these are legacy, weak algorithms. Enabling them per-session is a temporary compatibility workaround for this isolated GNS3 lab, not a recommendation for production. For real devices, upgrade the device SSH stack instead.
 
 ## Errors hit during the session, and what they meant
 
