@@ -1,48 +1,58 @@
 # SSH Configuration in GNS3 - In Progress
 
-**Status:** In progress (13 November 2026) - SSH is being configured on a two-router GNS3
-topology. This note records the work as it happens; the SSH session is not tested yet and no
-results are claimed here.
+**Status (13 Nov 2026):** SSH from Mac to R1 (HYD) is working and verified. SSH to R2 and R3 is configured but not yet verified on screen.
 
-## Topology (as supplied)
-Two Cisco IOS routers connected directly:
+## Actual lab topology (13 Nov 2026)
 
-| Router | Interface | IP address |
-| --- | --- | --- |
-| HYD | g1/0 | 192.168.1.1/24 |
-| BLR | g1/0 | 192.168.1.2/24 |
+Three emulated Cisco 7206VXR routers (GNS3 + dynamips), one management network, and three small LANs:
 
-The hand-edited topology diagram is ready but pending upload - GitHub's web upload of image
-files is currently failing, so the diagram will be attached once that route works again.
+- **Management:** Cloud1 (`feth1`, the Mac host side) - Switch4 - all three routers
+- **R1 - HYD** (Cisco 7206VXR, NPE-400)
+  - Gi2/0: `172.16.100.11` up/up (management) - SSH target
+  - Gi1/0: `10.20.12.1` up/up (transit toward R2, 10.20.12.0/24)
+  - Fa0/0: `10.20.1.1` up/up (LAN via Switch1 - PC1, PC2 on VPCS)
+  - All addresses show Method = NVRAM (loaded from startup-config at boot)
+- **R2 - BLR** (Cisco 7206VXR, NPE-400)
+  - Management: `172.16.100.12` (SSH command issued; login not yet captured)
+  - Transit and LAN interfaces shown on the canvas (Gi1/0, Fa0/0, Gi2/0, Gi3/0); IPs not captured yet
+- **R3** (SSH user: ramayana) - management IP not captured yet
+- LANs: Switch1 - PC1/PC2, Switch2 - PC3/PC4, Switch3 - PC5/PC6 (VPCS)
 
-## Environment
-- Mac (Apple M3) running GNS3
-- Cisco IOS routers (HYD, BLR)
+Config register `0x2102` (normal boot from NVRAM). R2 reports 509K NVRAM and 8192K internal Flash SIMM.
 
-## Procedure being followed (SSH enablement)
-1. `hostname` and `ip domain-name` - both are required before RSA keys can be generated
-2. Local user: `username <name> privilege 15 secret <password>`
-3. `crypto key generate rsa`
-4. vty lines: `line vty 0 4` with `login local` and `transport input ssh`
-5. Host test: `ssh <user>@192.168.1.1` (HYD) and `ssh <user>@192.168.1.2` (BLR), with legacy
-   algorithm options if the IOS version requires them
+## Working SSH command (Mac terminal)
 
-No passwords or keys are stored in this repository.
+```
+ssh -o KexAlgorithms=+diffie-hellman-group14-sha1 -o HostKeyAlgorithms=+ssh-rsa -o Ciphers=+aes128-cbc varanasi@172.16.100.11
+```
 
-## Reference notes from the lab sheet
-Show commands practiced: `show version`, `show inventory`, `show platform`,
-`show ip interface brief`, `show environment all`, `dir flash:`, `show processes cpu`.
+Why each option is needed - the old IOS image only offers legacy algorithms, and modern OpenSSH disables them by default:
 
-CLI modes (labels corrected from the lab sheet):
-- `R1>` is **user EXEC mode** - where you land on login
-- `enable` from user EXEC enters **privileged EXEC mode** (`R1#`)
-- `configure terminal` from privileged EXEC enters **global configuration mode** (`R1(config)#`)
+| Option | Reason |
+| --- | --- |
+| `-o KexAlgorithms=+diffie-hellman-group14-sha1` | Router offers only legacy key exchange |
+| `-o HostKeyAlgorithms=+ssh-rsa` | Router host key is RSA/SHA-1, deprecated since OpenSSH 8.8 |
+| `-o Ciphers=+aes128-cbc` | Router offers only CBC ciphers; omitting this kills the session with `no matching cipher found. Their offer: aes128-cbc,3des-cbc,aes192-cbc,aes256-cbc` |
 
-Console access from a Windows PC: power on the device, connect the console cable, check the
-COM port in Device Manager under Ports (COM & LPT), then open PuTTY and start a serial session
-on that COM port.
+Verified: password prompt, successful login, `HYD#` prompt, `show ip interface brief` output over the session.
 
-## Current state
-Topology and IP plan are as above. SSH enablement is being applied on the routers; the
-host-to-router SSH session has not been tested yet. This file will be updated with the actual
-outcome (success, or the exact error) once the test runs.
+**Lab-only warning:** these are legacy, weak algorithms. Acceptable inside isolated GNS3 emulation; do not enable them for real devices - upgrade the device SSH stack instead.
+
+## Errors hit during the session, and what they meant
+
+- **VPCS PC2: `en` / `ssh` - "Bad command".** VPCS is a tiny PC simulator (ping, trace, ip, dhcp). It has no privilege mode and no SSH client. SSH must come from the Mac terminal or another router.
+- **`sh ip` - "% Incomplete command".** IOS needs the full form: `show ip interface brief` (`sh ip int br`).
+- **`dir flash` - "%Error opening disk0:/flash (No such device)".** Nothing broken; IOS looked for a folder named `flash` inside `disk0:`. Correct next step is read-only: `show file systems`, then `dir <name>` with a filesystem that actually exists (the output of `show file systems` is not captured yet).
+- **`show environment all`.** PSU/temperature/voltage values come from the emulated image (GNS3 has no physical sensors). Fine for learning the command; they are not the Mac's real readings.
+- **`show platform` - "% Invalid input".** Not supported on this IOS/router. Use `show version` and `show inventory` instead (verified working: Cisco 7206VXR 6-slot chassis, NPE-400, port adapters).
+
+## Open items
+
+- Capture successful SSH logins for R2 (`spirit@172.16.100.12`) and R3 (user `ramayana`) with the same three options
+- Run `show file systems` on BLR, then the correct `dir` command
+- Capture `show ip interface brief` on R2 and R3 to fill in the remaining addresses
+- Verify startup-config persistence on R2/R3 (`show startup-config | include ip address`)
+
+## Earlier plan (10 Nov 2026, superseded)
+
+The first version of this lab was a two-router design: HYD `192.168.1.1/24` - BLR `192.168.1.2/24` over Gi1/0, with console-cable login notes and a show-command list. That design was replaced by the three-router build above; the two networks are not the same lab. Kept here for history only.
