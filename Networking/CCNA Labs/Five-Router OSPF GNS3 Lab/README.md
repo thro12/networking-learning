@@ -1,6 +1,7 @@
 # Five-Router OSPF GNS3 Lab
 
 **Status:** In progress (18 November 2026)
+
 **Built with:** GNS3 with Cisco IOS routers, configured by hand at the console
 
 Five routers (R1-R5) running OSPF across two areas, built in one evening lab session on 18 November 2026. A four-router area 0 backbone connects to an area 1 stub link through R4, the area border router. The goal of the session was to practise multi-area OSPF: router-IDs, network statements, neighbour adjacencies, and inter-area routing.
