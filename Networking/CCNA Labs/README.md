@@ -11,6 +11,7 @@ Hands-on networking labs in Cisco Packet Tracer and GNS3. Each project folder ha
 | [Company Network Design - In Progress](./Company%20Network%20Design%20-%20In%20Progress) | Cisco Packet Tracer + PTBuilder (JavaScript) | In progress |
 | [Campus Network Design](./Campus%20Network%20Design) | Cisco Packet Tracer | Topology and .pkt uploaded; detailed write-up pending |
 | [Lab 1 - Routing Between Two LANs in GNS3](./Lab%201%20-%20Routing%20Between%20Two%20LANs%20in%20GNS3) | GNS3 + VPCS | Completed (Nov 2026) |
+| [HDFC Bank Network - Manual GNS3 Lab](./HDFC%20Bank%20Network%20-%20Manual%20GNS3%20Lab) | GNS3 + VPCS | In progress (Nov 2026): primary-path connectivity verified; TATA-side forwarding and config save unverified |
 | [SSH Configuration in GNS3 - In Progress](./SSH%20Configuration%20in%20GNS3%20-%20In%20Progress) | GNS3 + Cisco IOS | In progress (Nov 2026): router SSH setup being applied, host connectivity test pending |
 | [Getting Started - Two-Network Setup](./Getting%20Started%20-%20Two-Network%20Setup) | Cisco Packet Tracer | Practice lab (Oct 2026) |
 | [Three-Router RIP Network](./Three-Router%20RIP%20Network) | Cisco Packet Tracer | Practice lab (Oct 2026) |
