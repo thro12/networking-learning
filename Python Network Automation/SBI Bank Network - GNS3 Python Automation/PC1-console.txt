@@ -1,0 +1,140 @@
+
+PC1> 
+>>> ip dhcp
+ip dhcp
+DDORA IP 192.168.1.1/24 GW 192.168.1.100
+
+PC1> 
+>>> show ip
+show ip
+
+NAME        : PC1[1]
+IP/MASK     : 192.168.1.1/24
+GATEWAY     : 192.168.1.100
+DNS         : 8.8.8.8  1.1.1.1
+DHCP SERVER : 192.168.1.100
+DHCP LEASE  : 86396, 86400/43200/75600
+MAC         : 00:50:79:66:68:00
+LPORT       : 10030
+RHOST:PORT  : 127.0.0.1:10031
+MTU         : 1500
+
+PC1> 
+>>> save
+save
+Saving startup configuration to startup.vpc
+.  done
+
+PC1> 
+>>> ping 192.168.1.100 -c 5
+ping 192.168.1.100 -c 5
+
+84 bytes from 192.168.1.100 icmp_seq=1 ttl=255 time=221.824 ms
+84 bytes from 192.168.1.100 icmp_seq=2 ttl=255 time=117.723 ms
+84 bytes from 192.168.1.100 icmp_seq=3 ttl=255 time=3.493 ms
+84 bytes from 192.168.1.100 icmp_seq=4 ttl=255 time=10.041 ms
+84 bytes from 192.168.1.100 icmp_seq=5 ttl=255 time=7.137 ms
+
+PC1> 
+>>> ping 8.8.8.8 -c 5
+ping 8.8.8.8 -c 5
+
+84 bytes from 8.8.8.8 icmp_seq=1 ttl=253 time=220.604 ms
+84 bytes from 8.8.8.8 icmp_seq=2 ttl=253 time=27.771 ms
+84 bytes from 8.8.8.8 icmp_seq=3 ttl=253 time=28.781 ms
+84 bytes from 8.8.8.8 icmp_seq=4 ttl=253 time=33.369 ms
+84 bytes from 8.8.8.8 icmp_seq=5 ttl=253 time=47.207 ms
+
+PC1> 
+>>> trace 8.8.8.8
+trace 8.8.8.8
+trace to 8.8.8.8, 8 hops max, press Ctrl+C to stop
+ 1   192.168.1.100   104.759 ms  12.393 ms  11.466 ms
+ 2   192.168.15.5   201.927 ms  20.847 ms  21.213 ms
+ 3   *192.168.35.3   69.454 ms (ICMP type:3, code:3, Destination port unreachable)  *
+
+PC1> 
+>>> ping 192.168.1.100 -c 5
+ping 192.168.1.100 -c 5
+
+84 bytes from 192.168.1.100 icmp_seq=1 ttl=255 time=112.969 ms
+84 bytes from 192.168.1.100 icmp_seq=2 ttl=255 time=6.145 ms
+84 bytes from 192.168.1.100 icmp_seq=3 ttl=255 time=6.285 ms
+84 bytes from 192.168.1.100 icmp_seq=4 ttl=255 time=9.260 ms
+84 bytes from 192.168.1.100 icmp_seq=5 ttl=255 time=3.527 ms
+
+PC1> 
+>>> ping 8.8.8.8 -c 5
+ping 8.8.8.8 -c 5
+
+84 bytes from 8.8.8.8 icmp_seq=1 ttl=253 time=144.696 ms
+84 bytes from 8.8.8.8 icmp_seq=2 ttl=253 time=28.545 ms
+84 bytes from 8.8.8.8 icmp_seq=3 ttl=253 time=32.166 ms
+84 bytes from 8.8.8.8 icmp_seq=4 ttl=253 time=25.354 ms
+84 bytes from 8.8.8.8 icmp_seq=5 ttl=253 time=26.173 ms
+
+PC1> 
+>>> trace 8.8.8.8
+trace 8.8.8.8
+trace to 8.8.8.8, 8 hops max, press Ctrl+C to stop
+ 1   192.168.1.100   142.728 ms  9.981 ms  9.488 ms
+ 2   192.168.14.4   166.506 ms  21.574 ms  23.237 ms
+ 3   *192.168.34.3   43.512 ms (ICMP type:3, code:3, Destination port unreachable)  *
+
+PC1> 
+>>> ping 192.168.1.100 -c 5
+ping 192.168.1.100 -c 5
+
+84 bytes from 192.168.1.100 icmp_seq=1 ttl=255 time=326.966 ms
+84 bytes from 192.168.1.100 icmp_seq=2 ttl=255 time=22.547 ms
+84 bytes from 192.168.1.100 icmp_seq=3 ttl=255 time=8.326 ms
+84 bytes from 192.168.1.100 icmp_seq=4 ttl=255 time=6.878 ms
+84 bytes from 192.168.1.100 icmp_seq=5 ttl=255 time=7.675 ms
+
+PC1> 
+>>> ping 8.8.8.8 -c 5
+ping 8.8.8.8 -c 5
+
+84 bytes from 8.8.8.8 icmp_seq=1 ttl=253 time=114.521 ms
+84 bytes from 8.8.8.8 icmp_seq=2 ttl=253 time=25.978 ms
+84 bytes from 8.8.8.8 icmp_seq=3 ttl=253 time=32.370 ms
+84 bytes from 8.8.8.8 icmp_seq=4 ttl=253 time=32.592 ms
+84 bytes from 8.8.8.8 icmp_seq=5 ttl=253 time=26.931 ms
+
+PC1> 
+>>> trace 8.8.8.8
+trace 8.8.8.8
+trace to 8.8.8.8, 8 hops max, press Ctrl+C to stop
+ 1   192.168.1.100   259.691 ms  12.361 ms  9.122 ms
+ 2   192.168.15.5   125.525 ms  21.591 ms  32.260 ms
+ 3   *192.168.35.3   34.699 ms (ICMP type:3, code:3, Destination port unreachable)  *
+
+PC1> 
+>>> ping 192.168.1.100 -c 5
+ping 192.168.1.100 -c 5
+
+84 bytes from 192.168.1.100 icmp_seq=1 ttl=255 time=140.157 ms
+84 bytes from 192.168.1.100 icmp_seq=2 ttl=255 time=256.054 ms
+84 bytes from 192.168.1.100 icmp_seq=3 ttl=255 time=7.134 ms
+84 bytes from 192.168.1.100 icmp_seq=4 ttl=255 time=2.567 ms
+84 bytes from 192.168.1.100 icmp_seq=5 ttl=255 time=10.971 ms
+
+PC1> 
+>>> ping 8.8.8.8 -c 5
+ping 8.8.8.8 -c 5
+
+84 bytes from 8.8.8.8 icmp_seq=1 ttl=253 time=132.901 ms
+84 bytes from 8.8.8.8 icmp_seq=2 ttl=253 time=30.470 ms
+84 bytes from 8.8.8.8 icmp_seq=3 ttl=253 time=38.124 ms
+84 bytes from 8.8.8.8 icmp_seq=4 ttl=253 time=29.227 ms
+84 bytes from 8.8.8.8 icmp_seq=5 ttl=253 time=32.780 ms
+
+PC1> 
+>>> trace 8.8.8.8
+trace 8.8.8.8
+trace to 8.8.8.8, 8 hops max, press Ctrl+C to stop
+ 1   192.168.1.100   48.051 ms  9.166 ms  10.402 ms
+ 2   192.168.14.4   78.616 ms  21.056 ms  22.012 ms
+ 3   *192.168.34.3   30.909 ms (ICMP type:3, code:3, Destination port unreachable)  *
+
+PC1> 

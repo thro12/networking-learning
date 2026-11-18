@@ -1,0 +1,87 @@
+[
+  {
+    "check": "PC DHCP exact diagram address and gateway",
+    "status": "PASS",
+    "detail": "Expected PC 192.168.1.1/24 and gateway .100; see PC1-console.txt"
+  },
+  {
+    "check": "1 OSPF preferred over default by longer prefix route source",
+    "status": "PASS",
+    "detail": "Expected ospf 1 via 192.168.15.5; actual output in R1-console.txt"
+  },
+  {
+    "check": "1 OSPF preferred over default by longer prefix PC to gateway",
+    "status": "PASS",
+    "detail": "See actual VPCS ping output"
+  },
+  {
+    "check": "1 OSPF preferred over default by longer prefix PC to simulated 8.8.8.8",
+    "status": "PASS",
+    "detail": "No Internet claim; destination is R3 loopback"
+  },
+  {
+    "check": "1 OSPF preferred over default by longer prefix NAT mapping",
+    "status": "PASS",
+    "detail": "Actual translation table in R1-console.txt"
+  },
+  {
+    "check": "2 Static /32 AD1 beats OSPF /32 AD110 route source",
+    "status": "PASS",
+    "detail": "Expected static via 192.168.14.4; actual output in R1-console.txt"
+  },
+  {
+    "check": "2 Static /32 AD1 beats OSPF /32 AD110 PC to gateway",
+    "status": "PASS",
+    "detail": "See actual VPCS ping output"
+  },
+  {
+    "check": "2 Static /32 AD1 beats OSPF /32 AD110 PC to simulated 8.8.8.8",
+    "status": "PASS",
+    "detail": "No Internet claim; destination is R3 loopback"
+  },
+  {
+    "check": "2 Static /32 AD1 beats OSPF /32 AD110 NAT mapping",
+    "status": "PASS",
+    "detail": "Actual translation table in R1-console.txt"
+  },
+  {
+    "check": "3 Floating static AD200 yields to OSPF AD110 route source",
+    "status": "PASS",
+    "detail": "Expected ospf 1 via 192.168.15.5; actual output in R1-console.txt"
+  },
+  {
+    "check": "3 Floating static AD200 yields to OSPF AD110 PC to gateway",
+    "status": "PASS",
+    "detail": "See actual VPCS ping output"
+  },
+  {
+    "check": "3 Floating static AD200 yields to OSPF AD110 PC to simulated 8.8.8.8",
+    "status": "PASS",
+    "detail": "No Internet claim; destination is R3 loopback"
+  },
+  {
+    "check": "3 Floating static AD200 yields to OSPF AD110 NAT mapping",
+    "status": "PASS",
+    "detail": "Actual translation table in R1-console.txt"
+  },
+  {
+    "check": "4 Default route when no specific /32 is learned route source",
+    "status": "PASS",
+    "detail": "Expected static via 192.168.14.4; actual output in R1-console.txt"
+  },
+  {
+    "check": "4 Default route when no specific /32 is learned PC to gateway",
+    "status": "PASS",
+    "detail": "See actual VPCS ping output"
+  },
+  {
+    "check": "4 Default route when no specific /32 is learned PC to simulated 8.8.8.8",
+    "status": "PASS",
+    "detail": "No Internet claim; destination is R3 loopback"
+  },
+  {
+    "check": "4 Default route when no specific /32 is learned NAT mapping",
+    "status": "PASS",
+    "detail": "Actual translation table in R1-console.txt"
+  }
+]

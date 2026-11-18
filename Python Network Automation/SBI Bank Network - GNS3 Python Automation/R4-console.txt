@@ -1,0 +1,72 @@
+Connected to Dynamips VM "R4" (ID 2, type c7200) - Console port
+Press ENTER to get the prompt.
+: %LINK-3-UPDOWN: Interface Ethernet6/6, changed state to up
+*Nov 17 15:57:13.691: %LINK-3-UPDOWN: Interface Ethernet6/7, changed state to up
+*Nov 17 15:57:14.615: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to down
+*Nov 17 15:57:14.619: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0, changed state to up
+*Nov 17 15:57:14.619: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet2/0, changed state to up
+*Nov 17 15:57:14.623: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet3/0, changed state to up
+*Nov 17 15:57:14.627: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet4/0, changed state to up
+*Nov 17 15:57:14.631: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet5/0, changed state to up
+*Nov 17 15:57:14.635: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet5/1, changed state to up
+*Nov 17 15:57:14.703: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/0, changed state to up
+*Nov 17 15:57:14.707: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/1, changed state to up
+*Nov 17 15:57:14.711: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/2, changed state to up
+*Nov 17 15:57:17.015: %LINK-5-CHANGED: Interface FastEthernet0/0, changed state to administratively down
+*Nov 17 15:57:17.423: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.3(3)XB12, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2013 by Cisco Systems, Inc.
+Compiled Tue 19-Nov-13 04:39 by prod_rel_team
+*Nov 17 15:57:17.583: %SNMP-5-COLDSTART: SNMP agent on host R4 is undergoing a cold start
+*Nov 17 15:57:17.939: %LINK-5-CHANGED: Interface GigabitEthernet3/0, changed state to administratively down
+*Nov 17 15:57:17.943: %LINK-5-CHANGED: Interface GigabitEthernet4/0, changed state to administratively down
+*Nov 17 15:57:17.947: %LINK-5-CHANGED: Interface FastEthernet5/0, changed state to administratively down
+*Nov 17 15:57:17.951: %LINK-5-CHANGED: Interface FastEthernet5/1, changed state to administratively down
+*Nov 17 15:57:17.951: %LINK-5-CHANGED: Interface Ethernet6/0, changed state to administratively down
+*Nov 17 15:57:17.955: %LINK-5-CHANGED: Interface Ethernet6/1, changed state to administratively down
+*Nov 17 15:57:17.959: %LINK-5-CHANGED: Interface Ethernet6/2, changed state to administratively down
+*Nov 17 15:57:17.963: %LINK-5-CHANGED: Interface Ethernet6/3, changed state to administratively down
+*Nov 17 15:57:17.963: %LINK-5-CHANGED: Interface Ethernet6/4, changed state to administratively down
+*Nov 17 15:57:17.967: %LINK-5-CHANGED: Interface Ethernet6/5, changed state to administratively down
+*Nov 17 15:57:19.047: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet3/0, changed state to down
+*Nov 17 15:57:19.051: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet4/0, changed state to down
+*Nov 17 15:57:19.055: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet5/0, changed state to down
+*Nov 17 15:57:19.059: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet5/1, changed state to down
+*Nov 17 15:57:19.059: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/0, changed state to down
+*Nov 17 15:57:19.063: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/1, changed state to down
+*Nov 17 15:57:19.067: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/2, changed state to down
+*Nov 17 15:57:19.071: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/3, changed state to down
+*Nov 17 15:57:19.075: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/4, changed state to down
+*Nov 17 15:57:19.079: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/5, changed state to down
+*Nov 17 15:58:02.839: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet1/0 from LOADING to FULL, Loading Done
+*Nov 17 15:58:03.031: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet2/0 from LOADING to FULL, Loading Done
+R4>
+>>> enable
+enable
+R4#
+>>> terminal length 0
+terminal length 0
+R4#
+>>> terminal width 512
+terminal width 512
+R4#
+>>> show ip interface brief
+show ip interface brief
+Interface                  IP-Address      OK? Method Status                Protocol
+FastEthernet0/0            unassigned      YES unset  administratively down down    
+GigabitEthernet1/0         192.168.34.4    YES NVRAM  up                    up      
+GigabitEthernet2/0         192.168.14.4    YES NVRAM  up                    up      
+GigabitEthernet3/0         unassigned      YES unset  administratively down down    
+GigabitEthernet4/0         unassigned      YES unset  administratively down down    
+FastEthernet5/0            unassigned      YES unset  administratively down down    
+FastEthernet5/1            unassigned      YES unset  administratively down down    
+Ethernet6/0                unassigned      YES unset  administratively down down    
+Ethernet6/1                unassigned      YES unset  administratively down down    
+Ethernet6/2                unassigned      YES unset  administratively down down    
+Ethernet6/3                unassigned      YES unset  administratively down down    
+Ethernet6/4                unassigned      YES unset  administratively down down    
+Ethernet6/5                unassigned      YES unset  administratively down down    
+Ethernet6/6                unassigned      YES unset  administratively down down    
+Ethernet6/7                unassigned      YES unset  administratively down down    
+R4#

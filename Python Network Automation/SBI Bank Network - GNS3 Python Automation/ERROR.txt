@@ -1,0 +1,3 @@
+R1 prompt timeout. Inspect the console log; no success assumed.
+Partial lab preserved. Do not rerun blindly: each new run makes a separate new project.
+Project: Routing-DHCP-NAT-20261117-211728-82b671

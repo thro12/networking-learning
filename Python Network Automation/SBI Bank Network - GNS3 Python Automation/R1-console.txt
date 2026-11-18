@@ -1,0 +1,1064 @@
+Connected to Dynamips VM "R1" (ID 4, type c7200) - Console port
+Press ENTER to get the prompt.
+ROMMON emulation microcode.
+
+Launching IOS image at 0x80008000...
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.3(3)XB12, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2013 by Cisco Systems, Inc.
+Compiled Tue 19-Nov-13 04:39 by prod_rel_team
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Cisco 7206VXR (NPE400) processor (revision A) with 491520K/32768K bytes of memory.Installed image archive
+
+Processor board ID 4279256517
+R7000 CPU at 150MHz, Implementation 39, Rev 2.1, 256KB L2, 512KB L3 Cache
+6 slot VXR midplane, Version 2.1
+
+Last reset from power-on
+
+PCI bus mb0_mb1 (Slots 0, 1, 3 and 5) has a capacity of 600 bandwidth points.
+Current configuration on bus mb0_mb1 has a total of 1400 bandwidth points. 
+The set of PA-2FE, PA-POS-2OC3, and I/O-2FE qualify for "half 
+bandwidth points" consideration, when full bandwidth point counting 
+results in oversubscription, under the condition that only one of the 
+two ports is used. With this adjustment, current configuration on bus 
+mb0_mb1 has a total of 1200 bandwidth points. 
+This configuration has oversubscripted the PCI bus and is not a 
+supported configuration. 
+
+PCI bus mb2 (Slots 2, 4, 6) has a capacity of 600 bandwidth points.
+Current configuration on bus mb2 has a total of 880 bandwidth points 
+The set of PA-2FE, PA-POS-2OC3, and I/O-2FE qualify for "half 
+bandwidth points" consideration, when full bandwidth point counting 
+results in oversubscription, under the condition that only one of the 
+two ports is used. With this adjustment, current configuration on bus 
+mb2 has a total of 880 bandwidth points. 
+This configuration has oversubscripted the PCI bus and is not a 
+supported configuration. 
+
+Please refer to the following document "Cisco 7200 Series Port Adaptor
+Hardware Configuration Guidelines" on Cisco.com <http://www.cisco.com>
+for c7200 bandwidth points oversubscription and usage guidelines.
+
+WARNING: PCI bus mb0_mb1 Exceeds 600 bandwidth points
+WARNING: PCI bus mb2 Exceeds 600 bandwidth points
+
+8 Ethernet interfaces
+3 FastEthernet interfaces
+4 Gigabit Ethernet interfaces
+509K bytes of NVRAM.
+
+8192K bytes of Flash internal SIMM (Sector size 256K).
+SETUP: new interface FastEthernet0/0 placed in "shutdown" state
+SETUP: new interface GigabitEthernet4/0 placed in "shutdown" state
+SETUP: new interface FastEthernet5/0 placed in "shutdown" state
+SETUP: new interface FastEthernet5/1 placed in "shutdown" state
+SETUP: new interface Ethernet6/0 placed in "shutdown" state
+SETUP: new interface Ethernet6/1 placed in "shutdown" state
+SETUP: new interface Ethernet6/2 placed in "shutdown" state
+SETUP: new interface Ethernet6/3 placed in "shutdown" state
+SETUP: new interface Ethernet6/4 placed in "shutdown" state
+SETUP: new interface Ethernet6/5 placed in "shutdown" state
+SETUP: new interface Ethernet6/6 placed in "shutdown" state
+SETUP: new interface Ethernet6/7 placed in "shutdown" state
+% Crashinfo may not be recovered at bootflash:crashinfo
+% This file system device reports an error
+
+
+Press RETURN to get started!
+
+
+*Nov 17 15:57:06.631: %PLATFORM-3-PACONFIG: Exceeds 600 bandwidth points for slots 0, 1, 3 & 5
+*Nov 17 15:57:06.635: %PLATFORM-3-PACONFIG: Exceeds 600 bandwidth points on both odd & even numbered slots
+*Nov 17 15:57:13.627: %LINEPROTO-5-UPDOWN: Line protocol on Interface VoIP-Null0, changed state to up
+*Nov 17 15:57:13.635: %LINK-3-UPDOWN: Interface FastEthernet0/0, changed state to up
+*Nov 17 15:57:13.643: %LINK-3-UPDOWN: Interface GigabitEthernet1/0, changed state to up
+*Nov 17 15:57:13.651: %LINK-3-UPDOWN: Interface GigabitEthernet2/0, changed state to up
+*Nov 17 15:57:13.659: %LINK-3-UPDOWN: Interface GigabitEthernet3/0, changed state to up
+*Nov 17 15:57:13.667: %LINK-3-UPDOWN: Interface GigabitEthernet4/0, changed state to up
+*Nov 17 15:57:13.671: %LINK-3-UPDOWN: Interface FastEthernet5/0, changed state to up
+*Nov 17 15:57:13.679: %LINK-3-UPDOWN: Interface FastEthernet5/1, changed state to up
+*Nov 17 15:57:13.687: %LINK-3-UPDOWN:
+R1>
+R1>
+R1>
+>>> enable
+
+R1>
+R1>
+R1>
+R1>
+>>> terminal length 0
+enable
+R1#terminal length 0
+R1#
+>>> terminal width 512
+terminal width 512
+R1#
+>>> show ip interface brief
+show ip interface brief
+Interface                  IP-Address      OK? Method Status                Protocol
+FastEthernet0/0            unassigned      YES unset  administratively down down    
+GigabitEthernet1/0         192.168.1.100   YES NVRAM  up                    up      
+GigabitEthernet2/0         192.168.14.1    YES NVRAM  up                    up      
+GigabitEthernet3/0         192.168.15.1    YES NVRAM  up                    up      
+GigabitEthernet4/0         unassigned      YES unset  administratively down down    
+FastEthernet5/0            unassigned      YES unset  administratively down down    
+FastEthernet5/1            unassigned      YES unset  administratively down down    
+Ethernet6/0                unassigned      YES unset  administratively down down    
+Ethernet6/1                unassigned      YES unset  administratively down down    
+Ethernet6/2                unassigned      YES unset  administratively down down    
+Ethernet6/3                unassigned      YES unset  administratively down down    
+Ethernet6/4                unassigned      YES unset  administratively down down    
+Ethernet6/5                unassigned      YES unset  administratively down down    
+Ethernet6/6                unassigned      YES unset  administratively down down    
+Ethernet6/7                unassigned      YES unset  administratively down down    
+NVI0                       192.168.1.100   YES unset  up                    up      
+R1#
+>>> write memory
+write memory
+Warning: Attempting to overwrite an NVRAM configuration previously written
+by a different version of the system image.
+Overwrite the previous NVRAM configuration?[confirm] Interface Ethernet6/0, changed state to up
+*Nov 17 15:57:13.695: %LINK-3-UPDOWN: Interface Ethernet6/1, changed state to up
+*Nov 17 15:57:13.703: %LINK-3-UPDOWN: Interface Ethernet6/2, changed state to up
+*Nov 17 15:57:13.711: %LINK-3-UPDOWN: Interface Ethernet6/3, changed state to up
+*Nov 17 15:57:13.719: %LINK-3-UPDOWN: Interface Ethernet6/4, changed state to up
+*Nov 17 15:57:13.727: %LINK-3-UPDOWN: Interface Ethernet6/5, changed state to up
+*Nov 17 15:57:13.731: %LINK-3-UPDOWN: Interface Ethernet6/6, changed state to up
+*Nov 17 15:57:13.739: %LINK-3-UPDOWN: Interface Ethernet6/7, changed state to up
+*Nov 17 15:57:14.671: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to down
+*Nov 17 15:57:14.675: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0, changed state to up
+*Nov 17 15:57:14.679: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet2/0, changed state to up
+*Nov 17 15:57:14.683: %LINEPROTO-5-UPDOWN: Line 
+[confirm]protocol on Interface GigabitEthernet3/0, changed state to up
+*Nov 17 15:57:14.687: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet4/0, changed state to up
+*Nov 17 15:57:14.691: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet5/0, changed state to up
+*Nov 17 15:57:14.691: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet5/1, changed state to up
+*Nov 17 15:57:14.695: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/0, changed state to up
+*Nov 17 15:57:14.699: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/1, changed state to up
+*Nov 17 15:57:14.703: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/2, changed state to up
+*Nov 17 15:57:16.583: %LINK-3-UPDOWN: Interface FastEthernet0/0, changed state to down
+*Nov 17 15:57:16.819: %LINEPROTO-5-UPDOWN: Line protocol on Interface NVI0, changed state to up
+*Nov 17 15:57:19.583: %SYS-5-CONFIG_I: Configured from memory by console
+*Nov 17 15:57:21.727: %LINK-5-CHANGED:
+[confirm] Interface FastEthernet0/0, changed state to administratively down
+*Nov 17 15:57:21.731: %LINK-5-CHANGED: Interface GigabitEthernet4/0, changed state to administratively down
+*Nov 17 15:57:21.735: %LINK-5-CHANGED: Interface FastEthernet5/0, changed state to administratively down
+*Nov 17 15:57:21.739: %LINK-5-CHANGED: Interface FastEthernet5/1, changed state to administratively down
+*Nov 17 15:57:21.743: %LINK-5-CHANGED: Interface Ethernet6/0, changed state to administratively down
+*Nov 17 15:57:21.743: %LINK-5-CHANGED: Interface Ethernet6/1, changed state to administratively down
+*Nov 17 15:57:21.747: %LINK-5-CHANGED: Interface Ethernet6/2, changed state to administratively down
+*Nov 17 15:57:21.751: %LINK-5-CHANGED: Interface Ethernet6/3, changed state to administratively down
+*Nov 17 15:57:21.751: %LINK-5-CHANGED: Interface Ethernet6/4, changed state to administratively down
+*Nov 17 15:57:21.755: %LINK-5-CHANGED: Interface Ethernet6/5, changed state to administratively down
+[confirm]
+*Nov 17 15:57:22.731: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+*Nov 17 15:57:22.735: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+*Nov 17 15:57:22.763: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet4/0, changed state to down
+*Nov 17 15:57:22.767: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet5/0, changed state to down
+*Nov 17 15:57:22.771: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet5/1, changed state to down
+*Nov 17 15:57:22.775: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/0, changed state to down
+*Nov 17 15:57:22.779: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/1, changed state to down
+*Nov 17 15:57:22.779: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/2, changed state to down
+*Nov 17 15:57:22.783: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/3, changed state to down
+*Nov 17 15:57:22.791: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/4, changed state to down
+[confirm]
+*Nov 17 15:58:03.319: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet2/0 from LOADING to FULL, Loading Done
+*Nov 17 15:58:04.111: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on GigabitEthernet3/0 from LOADING to FULL, Loading Done
+[confirm]Connected to Dynamips VM "R1" (ID 4, type c7200) - Console port
+Press ENTER to get the prompt.
+hernet6/2, changed state to up
+*Nov 17 15:57:13.711: %LINK-3-UPDOWN: Interface Ethernet6/3, changed state to up
+*Nov 17 15:57:13.719: %LINK-3-UPDOWN: Interface Ethernet6/4, changed state to up
+*Nov 17 15:57:13.727: %LINK-3-UPDOWN: Interface Ethernet6/5, changed state to up
+*Nov 17 15:57:13.731: %LINK-3-UPDOWN: Interface Ethernet6/6, changed state to up
+*Nov 17 15:57:13.739: %LINK-3-UPDOWN: Interface Ethernet6/7, changed state to up
+*Nov 17 15:57:14.671: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to down
+*Nov 17 15:57:14.675: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/0, changed state to up
+*Nov 17 15:57:14.679: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet2/0, changed state to up
+*Nov 17 15:57:14.683: %LINEPROTO-5-UPDOWN: Line 
+[confirm]protocol on Interface GigabitEthernet3/0, changed state to up
+*Nov 17 15:57:14.687: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet4/0, changed state to up
+*Nov 17 15:57:14.691: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet5/0, changed state to up
+*Nov 17 15:57:14.691: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet5/1, changed state to up
+*Nov 17 15:57:14.695: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/0, changed state to up
+*Nov 17 15:57:14.699: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/1, changed state to up
+*Nov 17 15:57:14.703: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/2, changed state to up
+*Nov 17 15:57:16.583: %LINK-3-UPDOWN: Interface FastEthernet0/0, changed state to down
+*Nov 17 15:57:16.819: %LINEPROTO-5-UPDOWN: Line protocol on Interface NVI0, changed state to up
+*Nov 17 15:57:19.583: %SYS-5-CONFIG_I: Configured from memory by console
+*Nov 17 15:57:21.727: %LINK-5-CHANGED:
+[confirm] Interface FastEthernet0/0, changed state to administratively down
+*Nov 17 15:57:21.731: %LINK-5-CHANGED: Interface GigabitEthernet4/0, changed state to administratively down
+*Nov 17 15:57:21.735: %LINK-5-CHANGED: Interface FastEthernet5/0, changed state to administratively down
+*Nov 17 15:57:21.739: %LINK-5-CHANGED: Interface FastEthernet5/1, changed state to administratively down
+*Nov 17 15:57:21.743: %LINK-5-CHANGED: Interface Ethernet6/0, changed state to administratively down
+*Nov 17 15:57:21.743: %LINK-5-CHANGED: Interface Ethernet6/1, changed state to administratively down
+*Nov 17 15:57:21.747: %LINK-5-CHANGED: Interface Ethernet6/2, changed state to administratively down
+*Nov 17 15:57:21.751: %LINK-5-CHANGED: Interface Ethernet6/3, changed state to administratively down
+*Nov 17 15:57:21.751: %LINK-5-CHANGED: Interface Ethernet6/4, changed state to administratively down
+*Nov 17 15:57:21.755: %LINK-5-CHANGED: Interface Ethernet6/5, changed state to administratively down
+[confirm]
+*Nov 17 15:57:22.731: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+*Nov 17 15:57:22.735: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+*Nov 17 15:57:22.763: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet4/0, changed state to down
+*Nov 17 15:57:22.767: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet5/0, changed state to down
+*Nov 17 15:57:22.771: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet5/1, changed state to down
+*Nov 17 15:57:22.775: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/0, changed state to down
+*Nov 17 15:57:22.779: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/1, changed state to down
+*Nov 17 15:57:22.779: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/2, changed state to down
+*Nov 17 15:57:22.783: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/3, changed state to down
+*Nov 17 15:57:22.791: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/4, changed state to down
+[confirm]
+*Nov 17 15:58:03.319: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet2/0 from LOADING to FULL, Loading Done
+*Nov 17 15:58:04.111: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on GigabitEthernet3/0 from LOADING to FULL, Loading Done
+[confirm]^U
+No action taken because command was not confirmed
+R1#
+R1#
+>>> enable
+enable
+R1#
+>>> terminal length 0
+terminal length 0
+R1#
+>>> terminal width 512
+terminal width 512
+R1#
+>>> show ip interface brief
+show ip interface brief
+Interface                  IP-Address      OK? Method Status                Protocol
+FastEthernet0/0            unassigned      YES unset  administratively down down    
+GigabitEthernet1/0         192.168.1.100   YES NVRAM  up                    up      
+GigabitEthernet2/0         192.168.14.1    YES NVRAM  up                    up      
+GigabitEthernet3/0         192.168.15.1    YES NVRAM  up                    up      
+GigabitEthernet4/0         unassigned      YES unset  administratively down down    
+FastEthernet5/0            unassigned      YES unset  administratively down down    
+FastEthernet5/1            unassigned      YES unset  administratively down down    
+Ethernet6/0                unassigned      YES unset  administratively down down    
+Ethernet6/1                unassigned      YES unset  administratively down down    
+Ethernet6/2                unassigned      YES unset  administratively down down    
+Ethernet6/3                unassigned      YES unset  administratively down down    
+Ethernet6/4                unassigned      YES unset  administratively down down    
+Ethernet6/5                unassigned      YES unset  administratively down down    
+Ethernet6/6                unassigned      YES unset  administratively down down    
+Ethernet6/7                unassigned      YES unset  administratively down down    
+NVI0                       192.168.1.100   YES unset  up                    up      
+R1#Connected to Dynamips VM "R1" (ID 4, type c7200) - Console port
+Press ENTER to get the prompt.
+tate to down
+*Nov 17 15:57:16.819: %LINEPROTO-5-UPDOWN: Line protocol on Interface NVI0, changed state to up
+*Nov 17 15:57:19.583: %SYS-5-CONFIG_I: Configured from memory by console
+*Nov 17 15:57:21.727: %LINK-5-CHANGED:
+[confirm] Interface FastEthernet0/0, changed state to administratively down
+*Nov 17 15:57:21.731: %LINK-5-CHANGED: Interface GigabitEthernet4/0, changed state to administratively down
+*Nov 17 15:57:21.735: %LINK-5-CHANGED: Interface FastEthernet5/0, changed state to administratively down
+*Nov 17 15:57:21.739: %LINK-5-CHANGED: Interface FastEthernet5/1, changed state to administratively down
+*Nov 17 15:57:21.743: %LINK-5-CHANGED: Interface Ethernet6/0, changed state to administratively down
+*Nov 17 15:57:21.743: %LINK-5-CHANGED: Interface Ethernet6/1, changed state to administratively down
+*Nov 17 15:57:21.747: %LINK-5-CHANGED: Interface Ethernet6/2, changed state to administratively down
+*Nov 17 15:57:21.751: %LINK-5-CHANGED: Interface Ethernet6/3, changed state to administratively down
+*Nov 17 15:57:21.751: %LINK-5-CHANGED: Interface Ethernet6/4, changed state to administratively down
+*Nov 17 15:57:21.755: %LINK-5-CHANGED: Interface Ethernet6/5, changed state to administratively down
+[confirm]
+*Nov 17 15:57:22.731: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+*Nov 17 15:57:22.735: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+*Nov 17 15:57:22.763: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet4/0, changed state to down
+*Nov 17 15:57:22.767: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet5/0, changed state to down
+*Nov 17 15:57:22.771: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet5/1, changed state to down
+*Nov 17 15:57:22.775: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/0, changed state to down
+*Nov 17 15:57:22.779: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/1, changed state to down
+*Nov 17 15:57:22.779: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/2, changed state to down
+*Nov 17 15:57:22.783: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/3, changed state to down
+*Nov 17 15:57:22.791: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet6/4, changed state to down
+[confirm]
+*Nov 17 15:58:03.319: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet2/0 from LOADING to FULL, Loading Done
+*Nov 17 15:58:04.111: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on GigabitEthernet3/0 from LOADING to FULL, Loading Done
+[confirm]^U
+No action taken because command was not confirmed
+R1#
+R1#enable
+R1#terminal length 0
+R1#terminal width 512
+R1#show ip interface brief
+Interface                  IP-Address      OK? Method Status                Protocol
+FastEthernet0/0            unassigned      YES unset  administratively down down    
+GigabitEthernet1/0         192.168.1.100   YES NVRAM  up                    up      
+GigabitEthernet2/0         192.168.14.1    YES NVRAM  up                    up      
+GigabitEthernet3/0         192.168.15.1    YES NVRAM  up                    up      
+GigabitEthernet4/0         unassigned      YES unset  administratively down down    
+FastEthernet5/0            unassigned      YES unset  administratively down down    
+FastEthernet5/1            unassigned      YES unset  administratively down down    
+Ethernet6/0                unassigned      YES unset  administratively down down    
+Ethernet6/1                unassigned      YES unset  administratively down down    
+Ethernet6/2                unassigned      YES unset  administratively down down    
+Ethernet6/3                unassigned      YES unset  administratively down down    
+Ethernet6/4                unassigned      YES unset  administratively down down    
+Ethernet6/5                unassigned      YES unset  administratively down down    
+Ethernet6/6                unassigned      YES unset  administratively down down    
+Ethernet6/7                unassigned      YES unset  administratively down down    
+NVI0                       192.168.1.100   YES unset  up                    up      
+R1#
+R1#
+>>> enable
+enable
+R1#
+>>> terminal length 0
+terminal length 0
+R1#
+>>> terminal width 512
+terminal width 512
+R1#
+>>> show ip interface brief
+show ip interface brief
+Interface                  IP-Address      OK? Method Status                Protocol
+FastEthernet0/0            unassigned      YES unset  administratively down down    
+GigabitEthernet1/0         192.168.1.100   YES NVRAM  up                    up      
+GigabitEthernet2/0         192.168.14.1    YES NVRAM  up                    up      
+GigabitEthernet3/0         192.168.15.1    YES NVRAM  up                    up      
+GigabitEthernet4/0         unassigned      YES unset  administratively down down    
+FastEthernet5/0            unassigned      YES unset  administratively down down    
+FastEthernet5/1            unassigned      YES unset  administratively down down    
+Ethernet6/0                unassigned      YES unset  administratively down down    
+Ethernet6/1                unassigned      YES unset  administratively down down    
+Ethernet6/2                unassigned      YES unset  administratively down down    
+Ethernet6/3                unassigned      YES unset  administratively down down    
+Ethernet6/4                unassigned      YES unset  administratively down down    
+Ethernet6/5                unassigned      YES unset  administratively down down    
+Ethernet6/6                unassigned      YES unset  administratively down down    
+Ethernet6/7                unassigned      YES unset  administratively down down    
+NVI0                       192.168.1.100   YES unset  up                    up      
+R1#
+>>> show ip route 8.8.8.8
+show ip route 8.8.8.8
+Routing entry for 8.8.8.8/32
+  Known via "ospf 1", distance 110, metric 21, type intra area
+  Last update from 192.168.15.5 on GigabitEthernet3/0, 00:10:18 ago
+  Routing Descriptor Blocks:
+  * 192.168.15.5, from 3.3.3.3, 00:10:18 ago, via GigabitEthernet3/0
+      Route metric is 21, traffic share count is 1
+R1#
+>>> show ip route 8.8.8.8
+show ip route 8.8.8.8
+Routing entry for 8.8.8.8/32
+  Known via "ospf 1", distance 110, metric 21, type intra area
+  Last update from 192.168.15.5 on GigabitEthernet3/0, 00:10:39 ago
+  Routing Descriptor Blocks:
+  * 192.168.15.5, from 3.3.3.3, 00:10:39 ago, via GigabitEthernet3/0
+      Route metric is 21, traffic share count is 1
+R1#
+>>> clear ip nat translation *
+clear ip nat translation *
+R1#
+>>> show ip nat translations
+show ip nat translations
+Pro Inside global         Inside local          Outside local         Outside global
+icmp 192.168.15.1:10364   192.168.1.1:10364     8.8.8.8:10364         8.8.8.8:10364
+icmp 192.168.15.1:10620   192.168.1.1:10620     8.8.8.8:10620         8.8.8.8:10620
+icmp 192.168.15.1:10876   192.168.1.1:10876     8.8.8.8:10876         8.8.8.8:10876
+icmp 192.168.15.1:11132   192.168.1.1:11132     8.8.8.8:11132         8.8.8.8:11132
+icmp 192.168.15.1:11388   192.168.1.1:11388     8.8.8.8:11388         8.8.8.8:11388
+R1#
+>>> configure terminal
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#
+>>> ip route 8.8.8.8 255.255.255.255 192.168.14.4
+ip route 8.8.8.8 255.255.255.255 192.168.14.4
+R1(config)#
+>>> end
+end
+R1#
+>>> show ip route 8.8.8.8
+show ip route 8.8.8.8
+Routing entry for 8.8.8.8/32
+  Known via "static", distance 1, metric 0
+  Routing Descriptor Blocks:
+  * 192.168.14.4
+      Route metric is 0, traffic share count is 1
+R1#
+>>> clear ip nat translation *
+clear ip nat translation *
+R1#
+*Nov 17 16:09:26.707: %SYS-5-CONFIG_I: Configured from console by console
+R1#
+>>> show ip nat translations
+show ip nat translations
+Pro Inside global         Inside local          Outside local         Outside global
+icmp 192.168.14.1:17788   192.168.1.1:17788     8.8.8.8:17788         8.8.8.8:17788
+icmp 192.168.14.1:18300   192.168.1.1:18300     8.8.8.8:18300         8.8.8.8:18300
+icmp 192.168.14.1:18556   192.168.1.1:18556     8.8.8.8:18556         8.8.8.8:18556
+icmp 192.168.14.1:18812   192.168.1.1:18812     8.8.8.8:18812         8.8.8.8:18812
+icmp 192.168.14.1:19068   192.168.1.1:19068     8.8.8.8:19068         8.8.8.8:19068
+R1#
+>>> configure terminal
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#
+>>> no ip route 8.8.8.8 255.255.255.255 192.168.14.4
+no ip route 8.8.8.8 255.255.255.255 192.168.14.4
+R1(config)#
+>>> ip route 8.8.8.8 255.255.255.255 192.168.14.4 200
+ip route 8.8.8.8 255.255.255.255 192.168.14.4 200
+R1(config)#
+>>> end
+end
+R1#
+>>> show ip route 8.8.8.8
+show ip route 8.8.8.8
+Routing entry for 8.8.8.8/32
+  Known via "ospf 1", distance 110, metric 21, type intra area
+  Last update from 192.168.15.5 on GigabitEthernet3/0, 00:00:02 ago
+  Routing Descriptor Blocks:
+  * 192.168.15.5, from 3.3.3.3, 00:00:02 ago, via GigabitEthernet3/0
+      Route metric is 21, traffic share count is 1
+R1#
+>>> clear ip nat translation *
+clear ip nat translation *
+R1#
+>>> show ip nat translations
+
+*Nov 17 16:09:56.627: %SYS-5-CONFIG_I: Configured from console by console
+R1#show ip nat translations
+Pro Inside global         Inside local          Outside local         Outside global
+icmp 192.168.15.1:25724   192.168.1.1:25724     8.8.8.8:25724         8.8.8.8:25724
+icmp 192.168.15.1:25980   192.168.1.1:25980     8.8.8.8:25980         8.8.8.8:25980
+icmp 192.168.15.1:26236   192.168.1.1:26236     8.8.8.8:26236         8.8.8.8:26236
+icmp 192.168.15.1:26492   192.168.1.1:26492     8.8.8.8:26492         8.8.8.8:26492
+icmp 192.168.15.1:26748   192.168.1.1:26748     8.8.8.8:26748         8.8.8.8:26748
+R1#
+>>> configure terminal
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#
+>>> no ip route 8.8.8.8 255.255.255.255 192.168.14.4 200
+no ip route 8.8.8.8 255.255.255.255 192.168.14.4 200
+R1(config)#
+>>> no router ospf 1
+no router ospf 1
+R1(config)#
+>>> end
+
+*Nov 17 16:10:26.283: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on GigabitEthernet3/0 from FULL to DOWN, Neighbor Down: Interface down or detached
+*Nov 17 16:10:26.287: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet2/0 from FULL to DOWN, Neighbor Down: Interface down or detached
+R1(config)#end
+R1#
+>>> show ip route 0.0.0.0
+show ip route 0.0.0.0
+Routing entry for 0.0.0.0/0, supernet
+  Known via "static", distance 1, metric 0, candidate default path
+  Routing Descriptor Blocks:
+  * 192.168.14.4
+      Route metric is 0, traffic share count is 1
+R1#
+>>> clear ip nat translation *
+
+*Nov 17 16:10:28.339: %SYS-5-CONFIG_I: Configured from console by console
+R1#clear ip nat translation *
+R1#
+>>> show ip nat translations
+show ip nat translations
+Pro Inside global         Inside local          Outside local         Outside global
+icmp 192.168.14.1:33660   192.168.1.1:33660     8.8.8.8:33660         8.8.8.8:33660
+icmp 192.168.14.1:34172   192.168.1.1:34172     8.8.8.8:34172         8.8.8.8:34172
+icmp 192.168.14.1:34428   192.168.1.1:34428     8.8.8.8:34428         8.8.8.8:34428
+icmp 192.168.14.1:34684   192.168.1.1:34684     8.8.8.8:34684         8.8.8.8:34684
+icmp 192.168.14.1:34940   192.168.1.1:34940     8.8.8.8:34940         8.8.8.8:34940
+R1#
+>>> configure terminal
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#
+>>> router ospf 1
+router ospf 1
+R1(config-router)#
+>>> router-id 1.1.1.1
+router-id 1.1.1.1
+R1(config-router)#
+>>> passive-interface default
+passive-interface default
+R1(config-router)#
+>>> no passive-interface GigabitEthernet2/0
+no passive-interface GigabitEthernet2/0
+R1(config-router)#
+>>> network 192.168.14.0 0.0.0.255 area 0
+network 192.168.14.0 0.0.0.255 area 0
+R1(config-router)#
+>>> no passive-interface GigabitEthernet3/0
+no passive-interface GigabitEthernet3/0
+R1(config-router)#
+>>> network 192.168.15.0 0.0.0.255 area 0
+
+*Nov 17 16:11:00.467: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet2/0 from LOADING to FULL, Loading Done
+R1(config-router)#network 192.168.15.0 0.0.0.255 area 0
+R1(config-router)#
+>>> exit
+exit
+R1(config)#
+>>> ip route 8.8.8.8 255.255.255.255 192.168.14.4
+
+*Nov 17 16:11:02.443: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on GigabitEthernet3/0 from LOADING to FULL, Loading Done
+R1(config)#ip route 8.8.8.8 255.255.255.255 192.168.14.4
+R1(config)#
+>>> end
+end
+R1#
+>>> show version
+
+*Nov 17 16:11:05.143: %SYS-5-CONFIG_I: Configured from console by console
+R1#show version
+Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.3(3)XB12, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2013 by Cisco Systems, Inc.
+Compiled Tue 19-Nov-13 04:39 by prod_rel_team
+
+ROM: ROMMON Emulation Microcode
+BOOTLDR: 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.3(3)XB12, RELEASE SOFTWARE (fc2)
+
+R1 uptime is 14 minutes
+System returned to ROM by unknown reload cause - suspect boot_data[BOOT_COUNT] 0x0, BOOT_COUNT 0, BOOTDATA 19
+System image file is "tftp://255.255.255.255/unknown"
+Last reload reason: Unknown reason
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Cisco 7206VXR (NPE400) processor (revision A) with 491520K/32768K bytes of memory.
+Processor board ID 4279256517
+R7000 CPU at 150MHz, Implementation 39, Rev 2.1, 256KB L2 Cache
+6 slot VXR midplane, Version 2.1
+
+Last reset from power-on
+
+PCI bus mb0_mb1 (Slots 0, 1, 3 and 5) has a capacity of 600 bandwidth points.
+Current configuration on bus mb0_mb1 has a total of 1400 bandwidth points. 
+The set of PA-2FE, PA-POS-2OC3, and I/O-2FE qualify for "half 
+bandwidth points" consideration, when full bandwidth point counting 
+results in oversubscription, under the condition that only one of the 
+two ports is used. With this adjustment, current configuration on bus 
+mb0_mb1 has a total of 1200 bandwidth points. 
+This configuration has oversubscripted the PCI bus and is not a 
+supported configuration. 
+
+PCI bus mb2 (Slots 2, 4, 6) has a capacity of 600 bandwidth points.
+Current configuration on bus mb2 has a total of 880 bandwidth points 
+The set of PA-2FE, PA-POS-2OC3, and I/O-2FE qualify for "half 
+bandwidth points" consideration, when full bandwidth point counting 
+results in oversubscription, under the condition that only one of the 
+two ports is used. With this adjustment, current configuration on bus 
+mb2 has a total of 880 bandwidth points. 
+This configuration has oversubscripted the PCI bus and is not a 
+supported configuration. 
+
+Please refer to the following document "Cisco 7200 Series Port Adaptor
+Hardware Configuration Guidelines" on Cisco.com <http://www.cisco.com>
+for c7200 bandwidth points oversubscription and usage guidelines.
+
+WARNING: PCI bus mb0_mb1 Exceeds 600 bandwidth points
+WARNING: PCI bus mb2 Exceeds 600 bandwidth points
+
+8 Ethernet interfaces
+3 FastEthernet interfaces
+4 Gigabit Ethernet interfaces
+509K bytes of NVRAM.
+
+8192K bytes of Flash internal SIMM (Sector size 256K).
+
+
+Configuration register is 0x2102
+
+R1#
+>>> show ip interface brief
+show ip interface brief
+Interface                  IP-Address      OK? Method Status                Protocol
+FastEthernet0/0            unassigned      YES unset  administratively down down    
+GigabitEthernet1/0         192.168.1.100   YES NVRAM  up                    up      
+GigabitEthernet2/0         192.168.14.1    YES NVRAM  up                    up      
+GigabitEthernet3/0         192.168.15.1    YES NVRAM  up                    up      
+GigabitEthernet4/0         unassigned      YES unset  administratively down down    
+FastEthernet5/0            unassigned      YES unset  administratively down down    
+FastEthernet5/1            unassigned      YES unset  administratively down down    
+Ethernet6/0                unassigned      YES unset  administratively down down    
+Ethernet6/1                unassigned      YES unset  administratively down down    
+Ethernet6/2                unassigned      YES unset  administratively down down    
+Ethernet6/3                unassigned      YES unset  administratively down down    
+Ethernet6/4                unassigned      YES unset  administratively down down    
+Ethernet6/5                unassigned      YES unset  administratively down down    
+Ethernet6/6                unassigned      YES unset  administratively down down    
+Ethernet6/7                unassigned      YES unset  administratively down down    
+NVI0                       192.168.1.100   YES unset  up                    up      
+R1#
+>>> show interfaces description
+show interfaces description
+Interface                      Status         Protocol Description
+Fa0/0                          admin down     down     
+Gi1/0                          up             up       Diagram link 192.168.1.100
+Gi2/0                          up             up       Diagram link 192.168.14.1
+Gi3/0                          up             up       Diagram link 192.168.15.1
+Gi4/0                          admin down     down     
+Fa5/0                          admin down     down     
+Fa5/1                          admin down     down     
+Et6/0                          admin down     down     
+Et6/1                          admin down     down     
+Et6/2                          admin down     down     
+Et6/3                          admin down     down     
+Et6/4                          admin down     down     
+Et6/5                          admin down     down     
+Et6/6                          admin down     down     
+Et6/7                          admin down     down     
+NV0                            up             up       
+R1#
+>>> show ip route
+show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override
+
+Gateway of last resort is 192.168.14.4 to network 0.0.0.0
+
+S*    0.0.0.0/0 [1/0] via 192.168.14.4
+      8.0.0.0/32 is subnetted, 1 subnets
+S        8.8.8.8 [1/0] via 192.168.14.4
+      192.168.1.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.1.0/24 is directly connected, GigabitEthernet1/0
+L        192.168.1.100/32 is directly connected, GigabitEthernet1/0
+      192.168.14.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.14.0/24 is directly connected, GigabitEthernet2/0
+L        192.168.14.1/32 is directly connected, GigabitEthernet2/0
+      192.168.15.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.15.0/24 is directly connected, GigabitEthernet3/0
+L        192.168.15.1/32 is directly connected, GigabitEthernet3/0
+O     192.168.34.0/24 [110/30] via 192.168.15.5, 00:00:03, GigabitEthernet3/0
+O     192.168.35.0/24 [110/20] via 192.168.15.5, 00:00:03, GigabitEthernet3/0
+R1#
+>>> show ip route 8.8.8.8
+show ip route 8.8.8.8
+Routing entry for 8.8.8.8/32
+  Known via "static", distance 1, metric 0
+  Routing Descriptor Blocks:
+  * 192.168.14.4
+      Route metric is 0, traffic share count is 1
+R1#
+>>> show ip protocols
+show ip protocols
+*** IP Routing is NSF aware ***
+
+Routing Protocol is "application"
+  Sending updates every 0 seconds
+  Invalid after 0 seconds, hold down 0, flushed after 0
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Maximum path: 32
+  Routing for Networks:
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+  Distance: (default is 4)
+
+Routing Protocol is "ospf 1"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Router ID 1.1.1.1
+  Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+  Maximum path: 4
+  Routing for Networks:
+    192.168.14.0 0.0.0.255 area 0
+    192.168.15.0 0.0.0.255 area 0
+  Passive Interface(s):
+    FastEthernet0/0
+    GigabitEthernet1/0
+    GigabitEthernet4/0
+    FastEthernet5/0
+    FastEthernet5/1
+    Ethernet6/0
+    Ethernet6/1
+    Ethernet6/2
+    Ethernet6/3
+    Ethernet6/4
+    Ethernet6/5
+    Ethernet6/6
+    Ethernet6/7
+    NVI0
+    VoIP-Null0
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    4.4.4.4              110      00:00:04
+    5.5.5.5              110      00:00:04
+    3.3.3.3              110      00:00:04
+  Distance: (default is 110)
+
+R1#
+>>> show ip ospf neighbor
+show ip ospf neighbor
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+5.5.5.5           1   FULL/DR         00:00:30    192.168.15.5    GigabitEthernet3/0
+4.4.4.4           1   FULL/DR         00:00:32    192.168.14.4    GigabitEthernet2/0
+R1#
+>>> show ip ospf interface brief
+show ip ospf interface brief
+Interface    PID   Area            IP Address/Mask    Cost  State Nbrs F/C
+Gi3/0        1     0               192.168.15.1/24    10    BDR   1/1
+Gi2/0        1     0               192.168.14.1/24    100   BDR   1/1
+R1#
+>>> show ip ospf database
+show ip ospf database
+
+            OSPF Router with ID (1.1.1.1) (Process ID 1)
+
+		Router Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+1.1.1.1         1.1.1.1         16          0x80000002 0x00348E 2
+3.3.3.3         3.3.3.3         798         0x80000003 0x002F57 3
+4.4.4.4         4.4.4.4         798         0x80000002 0x00AC2D 2
+5.5.5.5         5.5.5.5         795         0x80000003 0x00EADD 2
+
+		Net Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+192.168.14.4    4.4.4.4         798         0x80000001 0x006D2D
+192.168.15.5    5.5.5.5         795         0x80000001 0x005C34
+192.168.34.4    4.4.4.4         798         0x80000001 0x00F489
+192.168.35.5    5.5.5.5         804         0x80000001 0x00E390
+R1#
+>>> show running-config
+show running-config
+Building configuration...
+
+Current configuration : 3079 bytes
+!
+! Last configuration change at 16:11:05 UTC Tue Nov 17 2026
+upgrade fpd auto
+version 15.3
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+ip dhcp excluded-address 192.168.1.100
+!
+ip dhcp pool Canara-Bank
+ network 192.168.1.0 255.255.255.0
+ default-router 192.168.1.100 
+ dns-server 8.8.8.8 1.1.1.1 
+!
+!
+!
+no ip domain lookup
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+redundancy
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ shutdown
+ duplex half
+!
+interface GigabitEthernet1/0
+ description Diagram link 192.168.1.100
+ ip address 192.168.1.100 255.255.255.0
+ ip nat inside
+ ip virtual-reassembly in
+ negotiation auto
+!
+interface GigabitEthernet2/0
+ description Diagram link 192.168.14.1
+ ip address 192.168.14.1 255.255.255.0
+ ip nat outside
+ ip virtual-reassembly in
+ ip ospf cost 100
+ negotiation auto
+!
+interface GigabitEthernet3/0
+ description Diagram link 192.168.15.1
+ ip address 192.168.15.1 255.255.255.0
+ ip nat outside
+ ip virtual-reassembly in
+ ip ospf cost 10
+ negotiation auto
+!
+interface GigabitEthernet4/0
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface FastEthernet5/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface FastEthernet5/1
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface Ethernet6/0
+ no ip address
+ shutdown
+ duplex half
+!
+interface Ethernet6/1
+ no ip address
+ shutdown
+ duplex half
+!
+interface Ethernet6/2
+ no ip address
+ shutdown
+ duplex half
+!
+interface Ethernet6/3
+ no ip address
+ shutdown
+ duplex half
+!
+interface Ethernet6/4
+ no ip address
+ shutdown
+ duplex half
+!
+interface Ethernet6/5
+ no ip address
+ shutdown
+ duplex half
+!
+interface Ethernet6/6
+ no ip address
+ shutdown
+ duplex half
+!
+interface Ethernet6/7
+ no ip address
+ shutdown
+ duplex half
+!
+router ospf 1
+ router-id 1.1.1.1
+ passive-interface default
+ no passive-interface GigabitEthernet2/0
+ no passive-interface GigabitEthernet3/0
+ network 192.168.14.0 0.0.0.255 area 0
+ network 192.168.15.0 0.0.0.255 area 0
+!
+ip forward-protocol nd
+no ip http server
+no ip http secure-server
+!
+!
+ip nat inside source route-map NAT-AIRTEL interface GigabitEthernet2/0 overload
+ip nat inside source route-map NAT-TATA interface GigabitEthernet3/0 overload
+ip route 0.0.0.0 0.0.0.0 192.168.14.4
+ip route 0.0.0.0 0.0.0.0 192.168.15.5 200
+ip route 8.8.8.8 255.255.255.255 192.168.14.4
+!
+!
+route-map NAT-AIRTEL permit 10
+ match ip address 10
+ match interface GigabitEthernet2/0
+!
+route-map NAT-TATA permit 10
+ match ip address 10
+ match interface GigabitEthernet3/0
+!
+!
+access-list 10 permit 192.168.1.0 0.0.0.255
+!
+control-plane
+!
+!
+mgcp behavior rsip-range tgcp-only
+mgcp behavior comedia-role none
+mgcp behavior comedia-check-media-src disable
+mgcp behavior comedia-sdp-force disable
+!
+mgcp profile default
+!
+!
+!
+gatekeeper
+ shutdown
+!
+!
+line con 0
+ exec-timeout 0 0
+ logging synchronous
+ stopbits 1
+line aux 0
+ stopbits 1
+line vty 0 4
+ login
+ transport input all
+!
+!
+end
+
+R1#
+>>> show ip dhcp pool
+show ip dhcp pool
+
+Pool Canara-Bank :
+ Utilization mark (high/low)    : 100 / 0
+ Subnet size (first/next)       : 0 / 0 
+ Total addresses                : 254
+ Leased addresses               : 1
+ Pending event                  : none
+ 1 subnet is currently in the pool :
+ Current index        IP address range                    Leased addresses
+ 192.168.1.2          192.168.1.1      - 192.168.1.254     1
+R1#
+>>> show ip dhcp binding
+show ip dhcp binding
+Bindings from all pools not associated with VRF:
+IP address          Client-ID/	 	    Lease expiration        Type
+		    Hardware address/
+		    User name
+192.168.1.1         0100.5079.6668.00       Nov 18 2026 04:08 PM    Automatic
+R1#
+>>> show ip dhcp conflict
+show ip dhcp conflict
+IP address        Detection method   Detection time          VRF
+R1#
+>>> show ip nat statistics
+show ip nat statistics
+Total active translations: 6 (0 static, 6 dynamic; 6 extended)
+Peak translations: 6, occurred 00:02:18 ago
+Outside interfaces:
+  GigabitEthernet2/0, GigabitEthernet3/0
+Inside interfaces: 
+  GigabitEthernet1/0
+Hits: 84  Misses: 0
+CEF Translated packets: 64, CEF Punted packets: 20
+Expired translations: 0
+Dynamic mappings:
+-- Inside Source
+[Id: 1] route-map NAT-AIRTEL interface GigabitEthernet2/0 refcount 6
+[Id: 2] route-map NAT-TATA interface GigabitEthernet3/0 refcount 0
+
+Total doors: 0
+Appl doors: 0
+Normal doors: 0
+Queued Packets: 0
+R1#
+>>> show ip nat translations
+show ip nat translations
+Pro Inside global         Inside local          Outside local         Outside global
+udp 192.168.14.1:25585    192.168.1.1:25585     8.8.8.8:25586         8.8.8.8:25586
+icmp 192.168.14.1:33660   192.168.1.1:33660     8.8.8.8:33660         8.8.8.8:33660
+icmp 192.168.14.1:34172   192.168.1.1:34172     8.8.8.8:34172         8.8.8.8:34172
+icmp 192.168.14.1:34428   192.168.1.1:34428     8.8.8.8:34428         8.8.8.8:34428
+icmp 192.168.14.1:34684   192.168.1.1:34684     8.8.8.8:34684         8.8.8.8:34684
+icmp 192.168.14.1:34940   192.168.1.1:34940     8.8.8.8:34940         8.8.8.8:34940
+R1#
+>>> show access-lists
+show access-lists
+Standard IP access list 10
+    10 permit 192.168.1.0, wildcard bits 0.0.0.255 (36 matches)
+R1#
+>>> show route-map
+show route-map
+route-map NAT-AIRTEL, permit, sequence 10
+  Match clauses:
+    ip address (access-lists): 10 
+    interface GigabitEthernet2/0 
+  Set clauses:
+  Policy routing matches: 0 packets, 0 bytes
+route-map NAT-TATA, permit, sequence 10
+  Match clauses:
+    ip address (access-lists): 10 
+    interface GigabitEthernet3/0 
+  Set clauses:
+  Policy routing matches: 0 packets, 0 bytes
+R1#
+>>> write memory
+write memory
+Warning: Attempting to overwrite an NVRAM configuration previously written
+by a different version of the system image.
+Overwrite the previous NVRAM configuration?[confirm]

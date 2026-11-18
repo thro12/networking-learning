@@ -1,0 +1,18 @@
+{
+  "project_id": "c23c75e1-1d1e-4cf6-a4b6-53afd462f71a",
+  "project_name": "Routing-DHCP-NAT-20261117-211728-82b671",
+  "gns3_version": "2.2.61",
+  "nodes": {
+    "R3": "200d2027-51bf-4a25-b6f2-9cca9c3d5188",
+    "R4": "a044e949-12f5-43d8-8270-c9fa49beaf7d",
+    "R5": "bf7f7d67-ba53-48af-b39f-a91bcc6985bf",
+    "R1": "083521c0-1e50-45a3-b289-63e0a7ffd9a3",
+    "Switch1": "b44354ea-11ef-4669-b043-f89abf847572",
+    "PC1": "4ab10776-6f47-41c5-9eb7-65f428a740f0"
+  },
+  "stage": "4 Default route when no specific /32 is learned",
+  "report_directory": "/Users/sumanthr/GNS3-AutoLab-Reports/20261117-211728-82b671",
+  "project_path": "/Users/sumanthr/GNS3/projects/c23c75e1-1d1e-4cf6-a4b6-53afd462f71a",
+  "project_filename": "Routing-DHCP-NAT-20261117-211728-82b671.gns3",
+  "error": "R1 prompt timeout. Inspect the console log; no success assumed."
+}
