@@ -66,6 +66,26 @@ Routers discover each other with **Hello packets** and declare a neighbor down a
 
 On a shared multi-access network (e.g. Ethernet with many routers), routers elect a **Designated Router (DR)** and **Backup DR**: everyone else syncs only with the DR/BDR (updates to 224.0.0.6, DR floods to 224.0.0.5) instead of forming adjacencies with every peer. Election: highest interface **priority** (default 1; 0 = never DR), ties broken by highest Router-ID. The election is **nonpreemptive**: those rules only decide at election time - a router that joins later with a higher priority does not unseat an active DR, it wins only at the next election (for example after the current DR fails and the BDR takes over).
 
+**Reading the database - LSA types 1, 2 and 3**
+
+The link-state database is built from LSAs (link-state advertisements). Three types cover everything a multi-area CCNA lab needs:
+
+- **Type 1 - Router LSA:** originated by every router, describing itself - its links, neighbors and costs. Flooded only inside its own area; it never crosses an ABR.
+- **Type 2 - Network LSA:** on a shared Ethernet segment, the DR originates one listing every router attached to that segment. It also stays inside the area.
+- **Type 3 - Summary LSA:** the ABR reads its area's database and re-advertises each reachable network into the other areas as a summary. These summaries are exactly why routes from another area appear as **O IA** in the routing table.
+
+Commands for reading them in a lab:
+
+| Command | Shows |
+| --- | --- |
+| `show ip ospf database` | The whole database, grouped by area and LSA type |
+| `show ip ospf database router` | Only the Type 1 router LSAs |
+| `show ip ospf database network` | Only the Type 2 network LSAs |
+| `show ip ospf database summary` | Only the Type 3 summary LSAs |
+| `show ip ospf border-routers` | The ABRs and ASBRs this router knows, and the route to reach each one |
+
+In the two-area class lab below, R3 (internal to area 10) is expected to hold Type 1 and 2 LSAs for area 10 plus Type 3 summary LSAs originated by R2 (the ABR) describing the area 0 networks - matching the O IA 1.1.1.1 entry in the captured routing table.
+
 ## 6. Configuring OSPF - the syntax explained
 
 ```
@@ -185,4 +205,4 @@ Under `router ospf <process-id>`, the command `network <address> <wildcard> area
 Routers first discover neighbors on OSPF-enabled interfaces (Hello packets; Cisco defaults are 10 s hello / 40 s dead on Ethernet, 30/120 on NBMA) and form adjacencies - target state FULL in `show ip ospf neighbor`, with a DR/BDR elected on shared networks. They exchange link-state information until every router in the area holds the same database, and each one runs SPF to compute and install the best routes, marked O (or O IA for other areas) in the routing table.
 
 ---
-*Sources verified while compiling: RFC 2328 (OSPFv2 - LSRefreshTime 30 min, AllSPFRouters/AllDRouters 224.0.0.5/6, timer sample values) https://www.rfc-editor.org/rfc/rfc2328.html · IANA AS Number registry https://www.iana.org/assignments/as-numbers/as-numbers.xhtml · RFC 6793 (AS_TRANS 23456) https://www.rfc-editor.org/rfc/rfc6793.html · Cisco IOS OSPF command reference - ip ospf hello-interval defaults https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_ospf/command/iro-cr-book/ospf-i1.html · Cisco "Understand Administrative Distance" https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/15986-admin-distance.html · Cisco "An Introduction to IGRP" https://www.cisco.com/c/en/us/support/docs/ip/interior-gateway-routing-protocol-igrp/26825-5.html · Compiled and reorganized from Tungabadra Networks class material - 19 November 2026.*
+*Sources verified while compiling: RFC 2328 (OSPFv2 - LSRefreshTime 30 min, AllSPFRouters/AllDRouters 224.0.0.5/6, timer sample values) https://www.rfc-editor.org/rfc/rfc2328.html · IANA AS Number registry https://www.iana.org/assignments/as-numbers/as-numbers.xhtml · RFC 6793 (AS_TRANS 23456) https://www.rfc-editor.org/rfc/rfc6793.html · Cisco IOS OSPF command reference - ip ospf hello-interval defaults https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_ospf/command/iro-cr-book/ospf-i1.html · Cisco "Understand Administrative Distance" https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/15986-admin-distance.html · Cisco "An Introduction to IGRP" https://www.cisco.com/c/en/us/support/docs/ip/interior-gateway-routing-protocol-igrp/26825-5.html · CiscoLive session - OSPFv2 LSA types https://www.ciscolive.com/c/dam/r/ciscolive/apjc/docs/2025/pdf/CISCOU-2612.pdf · Cisco community - reading and understanding the OSPF database https://community.cisco.com/t5/networking-knowledge-base/reading-and-understanding-the-ospf-database/ta-p/3145995 · Compiled and reorganized from Tungabadra Networks class material - updated 20 November 2026.*
